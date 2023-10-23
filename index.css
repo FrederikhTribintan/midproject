@@ -5,6 +5,8 @@
 body{
     background-color: #323232;
 }
+.header{
+}
 .borderatas{
     justify-content: space-around;
     display: flex;
@@ -57,4 +59,15 @@ body{
 .borderlogo2 a p{
     margin-top: 7px;
     margin-right: 300px;
+}
+
+.borderatas2{
+    background-color: rgba(0,0,0,.5);
+    height: 100px;
+    text-align: center;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+.borderatas2 p{
+    font-size: 100px
 }
