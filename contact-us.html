@@ -31,61 +31,85 @@
         <main>
             <div class="container">
                 <h2>Contact Us</h2>
-                <form class="form"action="#">
-                <div class="input-container">
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" required>
-                </div>
-                <div class="input-container">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required>
-                </div>
-                <div class="input-container">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-                </div>
-                <div class="input-container">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-                </div>
-                <div class="input-container">
-                <label for="gender">Gender</label>
-                <div class="radio-container">
-                    <input type="radio" id="male" name="gender" value="male" required>
-                    <label for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="female" required>
-                    <label for="female">Female</label>
-                </div>
-                </div>
-                <div class="input-container">
-                <label for="religion">Religion</label>
-                <select id="religion" name="religion" required>
-                    <option value="">Select</option>
-                    <option value="islam">Islam</option>
-                    <option value="christianity">Christianity</option>
-                    <option value="hinduism">Hinduism</option>
-                    <option value="buddhism">Buddhism</option>
-                </select>
-                </div>
-                <div class="input-container">
-                <label for="address">Address</label>
-                <textarea id="address" name="address" rows="4" required></textarea>
-                </div>
-                <div class="input-container">
-                <label for="hobbies">Hobbies</label>
-                <div class="checkbox-container">
-                    <input type="checkbox" id="music" name="hobbies" value="music">
-                    <label for="music">Music</label>
-                    <input type="checkbox" id="sports" name="hobbies" value="sports">
-                    <label for="sports">Sports</label>
-                    <input type="checkbox" id="reading" name="hobbies" value="reading">
-                    <label for="reading">Reading</label>
-                </div>
-                </div>
-                <div class="submit-container">
-                <input type="submit" value="Save">
+                <form class="form" action="#" onsubmit="return validateForm()">
+                    <div class="input-container">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" >
+                    </div>
+                    <div class="input-container">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" >
+                    </div>
+                    <div class="input-container">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" >
+                    </div>
+                    <div class="input-container">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" >
+                    </div>
+                    <div class="input-container">
+                        <label for="gender">Gender</label>
+                        <div class="radio-container">
+                            <input type="radio" id="male" name="gender" value="male" >
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="female" >
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <label for="religion">Religion</label>
+                        <select id="religion" name="religion" >
+                            <option value="">Select</option>
+                            <option value="islam">Islam</option>
+                            <option value="christianity">Christianity</option>
+                            <option value="hinduism">Hinduism</option>
+                            <option value="buddhism">Buddhism</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" rows="4" ></textarea>
+                    </div>
+                    <div class="input-container">
+                        <label for="hobbies">Hobbies</label>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="music" name="hobbies" value="music">
+                            <label for="music">Music</label>
+                            <input type="checkbox" id="sports" name="hobbies" value="sports">
+                            <label for="sports">Sports</label>
+                            <input type="checkbox" id="reading" name="hobbies" value="reading">
+                            <label for="reading">Reading</label>
+                        </div>
+                    </div>
+                    <div class="submit-container">
+                        <input type="submit" value="Save">
+                    </div>
                 </form>
             </div>
+        </main>
+        
+        <script>
+            function validateForm() {
+                // Validate each required field
+                var fullname = document.getElementById('fullname').value;
+                var email = document.getElementById('email').value;
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+                var gender = document.querySelector('input[name="gender"]:checked');
+                var religion = document.getElementById('religion').value;
+                var address = document.getElementById('address').value;
+        
+                if (!fullname || !email || !username || !password || !gender || !religion || !address) {
+                    alert('Please fill in all required fields.');
+                    return false; // Prevent form submission
+                }
+        
+                // Additional validation logic can be added here if needed
+        
+                return true; // Allow form submission
+            }
+        </script>
         </main>
     </body>
     <footer>
